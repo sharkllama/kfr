@@ -105,6 +105,9 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "config types" FORCE)
 
 # Insert common c++ flags here
 set(CMAKE_CXX_FLAGS " ${CMAKE_CXX_FLAGS}" CACHE STRING "compile flags" FORCE)
+if(CMAKE_BUILD_TYPE MATCHES DEBUG)
+    add_compile_options(-g)
+endif ()
 
 project(kfr CXX)
 
